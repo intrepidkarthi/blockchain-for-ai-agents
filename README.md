@@ -192,20 +192,4 @@ Or just `node run-all.js`, which stands up both sellers and runs everything.
 
 ---
 
-## Workshop rigging notes
-
-- **Pre-fund throwaway wallets** and publish their keys here as credentials — live
-  faucet funding is the #1 thing that wrecks the session. (N/A for the mock; matters
-  for the real swap.)
-- **Pin your block explorer tab** and pre-load the wallet address.
-- **Cache model responses** you don't need live — the demo is the payment, not the LLM.
-- **Pre-record every demo** end to end. On-chain live demos fail; a queued recording
-  turns a failure into a thirty-second joke.
-
----
-
-*Teaching material. The mock facilitator is NOT a secure payment system; do not
-deploy it. Figures in `src/measure/snapshot.json` are dated 2026-08-18 — re-verify
-the week of the workshop.*
-
 MIT.
