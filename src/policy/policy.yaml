@@ -1,0 +1,25 @@
+# agent-spend-policy.yaml — the hand-out. src/policy/engine.js enforces this shape.
+# Starting point, not a finished control.
+agent:
+  id: "did:agent:research-01"
+  tier: 3                          # see autonomy tiers in the content-design doc
+
+limits:
+  per_transaction_usd: 1.00
+  rolling_24h_usd: 25.00
+  velocity_max_per_min: 10         # circuit breaker, not a rate limit
+  novel_counterparty_usd: 0.10     # first-seen payee gets a tighter cap
+
+authorization:
+  decode_calldata: required        # NEVER authorize on stated intent
+  simulate_before_sign: required
+  allowed_intents: [transfer]      # explicit allowlist, never wildcard
+  on_policy_miss: reject           # reject, do not warn-and-proceed
+
+escalation:
+  human_approval_above_usd: 50.00
+  kill_switch: ops.pagerduty       # and test it quarterly
+
+audit:
+  log: [intent, decision, decoded_calldata, tx_hash, policy_version]
+  immutable: true

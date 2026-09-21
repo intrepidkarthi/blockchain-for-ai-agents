@@ -1,0 +1,21 @@
+{
+  "name": "blockchain-aiagents-workshop",
+  "version": "1.0.0",
+  "description": "Build an x402 agent payment flow, then break it. Workshop reference repo — zero dependencies.",
+  "type": "commonjs",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "seller": "node src/seller/seller.js vulnerable 4021",
+    "seller:secure": "node src/seller/seller.js secure 4021",
+    "buyer": "node src/buyer/agent.js http://localhost:4021",
+    "mcp": "node src/mcp/paid-tool.js",
+    "measure": "node src/measure/pull.js",
+    "attack:replay": "node src/attacks/01-replay.js http://localhost:4021",
+    "attack:cache": "node src/attacks/02-cache-leak.js 4021",
+    "attack:settle": "node src/attacks/03-verify-settle.js",
+    "attack:deputy": "node src/attacks/04-confused-deputy.js",
+    "attack:blowout": "node src/attacks/05-budget-blowout.js",
+    "demo": "node run-all.js"
+  },
+  "license": "MIT"
+}

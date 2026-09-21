@@ -1,0 +1,82 @@
+{
+  "_comment": "Fallback figures, verified 2026-08-25. pull.js fetches agenteconomy.to/data.json live and only uses this if the network fails. EVERY number here carries its source. Re-verify the week of the workshop.",
+  "_verificationNote": "Figures marked sourceVerified:true were checked against the cited primary source on 2026-08-25. Do not add a number here without a source you have actually opened.",
+  "asOf": "2026-08-25",
+
+  "x402": {
+    "lifetimeSettlementUsd": 41401255,
+    "lifetimeTransactions": 168016314,
+    "facilitatorsTracked": 18,
+    "chainsTracked": 12,
+    "peakMonth": { "month": "Nov 25", "txs": 52592786, "vol": 20544830 },
+    "currentMonth": { "month": "Aug 26", "txs": 8000687, "vol": 252177 },
+    "_note": "Volume is down ~98.8% from the Nov-2025 peak while transaction COUNT is flat-to-up. Quote 'down ~99% from peak' (reproducible from this series), NOT the secondhand '-93% YTD' — that analyst figure does not reconcile cleanly against the monthly series."
+  },
+
+  "measurementSpread30d": {
+    "_comment": "The cold open. Four sources, same protocol, same 30-day window, wildly different answers.",
+    "officialSiteUsd": 24240000,
+    "officialSiteFrozenAt": "2026-07-14",
+    "officialSiteNote": "x402.org homepage banner reads 75.41M tx / $24.24M / 94.06K buyers / 22K sellers, labelled 'Last 30 Days'. Page metadata shows last updated 2026-07-14 — a 'last 30 days' widget that has not moved in six weeks.",
+    "alliumUsd": 3000000,
+    "artemisAdjustedUsd": 1600000,
+    "artemisNote": "Artemis wash-filter, Dec 2025 basis",
+    "marketplaceGmvUsd": 30969,
+    "marketplaceSource": "Vibe Springs, calls x listed price over the Bazaar catalogue",
+    "marketplaceAsOf": "2026-08-24"
+  },
+
+  "washTrading": {
+    "shareOfVolumePct": 81,
+    "shareOfTxCountPct": 48,
+    "source": "Artemis Analytics wash-trade filter",
+    "basisDate": "2025-12",
+    "sourceVerified": true,
+    "_caution": "This is an INDICATIVE estimate on a December 2025 basis, and it is a share of VOLUME (dollars), not of transactions. Do not present it as a current or precise measurement."
+  },
+
+  "erc8004": {
+    "registeredAgents": 497869,
+    "registeredAgentsSource": "agenteconomy.to ERC-8004 registry tracker (Dune @hashed_official), 2026-08-24",
+    "operationalOfFirst10k": 19,
+    "operationalSource": "arXiv 2606.12128, 'From Agent Identity to Agent Economy', 10 Jun 2026",
+    "serviceRecordsOfFirst10k": 67,
+    "receivedFeedbackOfFirst10k": 628,
+    "top10OwnerWalletSharePct": 51.4,
+    "sybilReviewerPctBase": 90.6,
+    "sybilReviewerPctEthereum": 73.5,
+    "sybilReviewerPctBsc": 59.2,
+    "medianReputationManipulationUsdBase": 0.0027,
+    "medianReputationManipulationUsdBsc": 0.0042,
+    "medianReputationManipulationUsdEthereum": 0.055,
+    "reputationSource": "arXiv 2606.26028, 'Can Trustless Agents Be Trusted?', 24 Jun 2026 (v2 8 Jul)",
+    "sourceVerified": true,
+    "_note": "The $0.0027 figure was previously mis-attributed to 2606.12128 in this file. It is from 2606.26028. Paper's own framing: median attack cost $0.0027 can move an agent whose median payment volume is 259x larger."
+  },
+
+  "context": {
+    "lightningAllNetworkMonthlyUsdNov2025": 1100000000,
+    "lightningTxCountNov2025": 5200000,
+    "lightningAvgTxUsdNov2025": 223,
+    "lightningSource": "River report, first month Lightning passed $1B",
+    "sourceVerified": true,
+    "_caution": "This is the WHOLE Lightning Network — exchange and merchant flow at a $223 average payment. It is NOT L402 machine-micropayment volume, which is not broken out anywhere. The previous version of this file labelled it 'Lightning/L402' and claimed ~50x; the correct multiple against x402 lifetime settlement is ~27x. Say the caveat out loud or a Lightning-literate attendee will catch it.",
+    "cloudflareCrawlerAiSharePct": 52,
+    "cloudflareCrawlerAiShareSpring2025Pct": 22,
+    "cloudflareSourceVerified": false,
+    "cloudflareNote": "RE-VERIFY against Cloudflare Radar before quoting."
+  },
+
+  "sources": {
+    "x402Live": "https://agenteconomy.to/data.json",
+    "x402StatsPage": "https://agenteconomy.to/stats/x402-transactions",
+    "officialSite": "https://x402.org",
+    "realGmv": "https://vibesprings.net/state-of-x402",
+    "volumeDecline": "https://cryptopotato.com/x402-volume-plunges-93-ytd-as-agentic-ai-economy-hype-fades/",
+    "erc8004Operational": "https://arxiv.org/abs/2606.12128",
+    "erc8004Reputation": "https://arxiv.org/abs/2606.26028",
+    "fiveAttacks": "https://arxiv.org/abs/2605.11781",
+    "facilitatorStudy": "https://arxiv.org/abs/2607.19545",
+    "facilitatorStudyPeerReviewed": "https://www.usenix.org/system/files/usenixsecurity26-wang-qinying.pdf"
+  }
+}
